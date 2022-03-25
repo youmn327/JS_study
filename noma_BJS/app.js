@@ -169,9 +169,39 @@ const titleBYID = document.getElementById("hello") // 안붙여도 된다.
 console.log("event");
 
 const click_func = document.querySelector(".blue");
-function handleTitleClick(){
+function handleTitleClick() {
   click_func.style.color = "blue";
   console.log("click was clicked!")
 }
-click_func.addEventListener("click",handleTitleClick);
+click_func.addEventListener("click", handleTitleClick);
 
+console.log("handle MouseEnter")
+
+
+const mouse_func_in_out = document.querySelector(".enter")
+
+function handleMouseEnter() {
+  console.log("enter mouse")
+}
+
+function handleMouseout() {
+  console.log(" mouse out")
+}
+
+mouse_func_in_out.addEventListener("mouseenter", handleMouseEnter)
+mouse_func_in_out.addEventListener("mouseleave", handleMouseout)
+
+
+// Transform Text
+const mouse_func_turn_text = document.querySelector(".turntext") // Class에는 _ 붙이지 않기 한 문장으로
+
+function turnonMouseEnter() {
+  mouse_func_turn_text.innerText = "turn_on";
+}
+
+function turnoffMouseout() {
+  mouse_func_turn_text.innerText = "turn_off";
+}
+
+mouse_func_turn_text.addEventListener("mouseenter", turnonMouseEnter)
+mouse_func_turn_text.addEventListener("mouseleave", turnoffMouseout)
